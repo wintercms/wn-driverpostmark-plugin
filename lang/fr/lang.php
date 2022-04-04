@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'plugin_description' => "Plugin qui ajoute l'envoi de courriel à travers Postmark",
+    'plugin_description' => "Ajoute le pilote de courriel Postmark pour Winter CMS.",
 
     'fields' => [
         'postmark_secret' => [
