@@ -16,8 +16,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Postmark driver',
-            'description' => 'winter.postmarkdriver:lang.plugin_description',
+            'name'        => 'winter.postmarkdriver::lang.plugin_name',
+            'description' => 'winter.postmarkdriver::lang.plugin_description',
             'author'      => 'Winter',
             'icon'        => 'icon-leaf'
         ];
