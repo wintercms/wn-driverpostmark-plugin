@@ -1,16 +1,10 @@
 <?php namespace Winter\PostmarkDriver;
 
 use App;
-use Backend;
-use Backend\Models\UserRole;
 use Event;
+
 use System\Classes\PluginBase;
 use System\Models\MailSetting;
-
-use Winter\Storm\Mail\MailManager;
-
-use Symfony\Component\Mailer\Transport\Dsn;
-use Symfony\Component\Mailer\Bridge\Postmark\Transport\PostmarkTransportFactory;
 
 /**
  * SendgridDriver Plugin Information File
