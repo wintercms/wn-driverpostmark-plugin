@@ -1,0 +1,18 @@
+{
+    "name": "winter/wn-postmarkdriver-plugin",
+    "description": "Postmark Mail Driver",
+    "type": "winter-plugin",
+    "homepage": "https://github.com/wintercms/wn-postmarkdriver-plugin",
+    "keywords": [ "postmark", "wintercms", "mail", "driver" ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Jauvin",
+            "email": "marc.jauvin@gmail.com"
+        }
+    ],
+    "require": {
+	"symfony/http-client": "^6.0",
+        "symfony/postmark-mailer": "^6.0.0"
+    }
+}
