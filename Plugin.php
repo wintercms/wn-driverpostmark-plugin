@@ -1,13 +1,12 @@
-<?php namespace Winter\PostmarkDriver;
+<?php namespace Winter\DriverPostmark;
 
 use App;
 use Event;
-
 use System\Classes\PluginBase;
 use System\Models\MailSetting;
 
 /**
- * SendgridDriver Plugin Information File
+ * DriverPostmark Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -16,10 +15,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'winter.postmarkdriver::lang.plugin_name',
-            'description' => 'winter.postmarkdriver::lang.plugin_description',
-            'author'      => 'Winter',
-            'icon'        => 'icon-leaf'
+            'name'        => 'winter.driverpostmark::lang.plugin.name',
+            'description' => 'winter.driverpostmark::lang.plugin.description',
+            'homepage'    => 'https://github.com/wintercms/wn-driverpostmark-plugin',
+            'author'      => 'Winter CMS',
+            'icon'        => 'icon-leaf',
         ];
     }
 
@@ -52,13 +52,14 @@ class Plugin extends PluginBase
             }
 
             $field = $widget->getField('send_mode');
-            $field->options(array_merge($field->options(), [self::MODE_POSTMARK => "Postmark"]));
+            $field->options(array_merge($field->options(), [self::MODE_POSTMARK => 'Postmark']));
 
             $widget->addTabFields([
                 'postmark_secret' => [
-                    "tab"     => "system::lang.mail.general",
-                    'label'   => 'winter.postmarkdriver::lang.fields.postmark_secret.label',
-                    'commentAbove' => 'winter.postmarkdriver::lang.fields.postmark_secret.comment',
+                    'tab'     => 'system::lang.mail.general',
+                    'label'   => 'winter.driverpostmark::lang.postmark_secret',
+                    'type'    => 'sensitive',
+                    'commentAbove' => 'winter.driverpostmark::lang.postmark_secret_comment',
                     'trigger' => [
                         'action'    => 'show',
                         'field'     => 'send_mode',

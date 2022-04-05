@@ -1,18 +1,28 @@
 {
-    "name": "winter/wn-postmarkdriver-plugin",
-    "description": "Postmark Mail Driver",
+    "name": "winter/wn-driverpostmark-plugin",
+    "description": "Driver that adds support for the Postmark mailer to WinterCMS",
     "type": "winter-plugin",
-    "homepage": "https://github.com/wintercms/wn-postmarkdriver-plugin",
-    "keywords": [ "postmark", "wintercms", "mail", "driver" ],
+    "homepage": "https://github.com/wintercms/wn-driverpostmark-plugin",
+    "support": {
+        "issues": "https://github.com/wintercms/wn-driverpostmark-plugin/issues",
+        "discord": "https://discord.gg/D5MFSPH6Ux",
+        "source": "https://github.com/wintercms/wn-driverpostmark-plugin"
+    },
+    "keywords": ["postmark", "wintercms", "mail", "driver"],
     "license": "MIT",
     "authors": [
         {
             "name": "Marc Jauvin",
             "email": "marc.jauvin@gmail.com"
+        },
+        {
+            "name": "Winter CMS Maintainers",
+            "homepage": "https://wintercms.com",
+            "role": "Maintainer"
         }
     ],
     "require": {
-	"symfony/http-client": "^6.0",
+        "symfony/http-client": "^6.0",
         "symfony/postmark-mailer": "^6.0.0"
     }
 }
