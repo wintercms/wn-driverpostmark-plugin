@@ -5,6 +5,9 @@ use Event;
 use System\Classes\PluginBase;
 use System\Models\MailSetting;
 
+use Symfony\Component\Mailer\Transport\Dsn;
+use Symfony\Component\Mailer\Bridge\Postmark\Transport\PostmarkTransportFactory;
+
 /**
  * DriverPostmark Plugin Information File
  */
@@ -28,6 +31,20 @@ class Plugin extends PluginBase
     public function register()
     {
         Event::listen('mailer.beforeRegister', function ($mailManager) {
+            $mailManager->extend(self::MODE_POSTMARK, function ($config) {
+                $factory = new PostmarkTransportFactory();
+
+                if (!isset($config['secret'])) {
+                    $config = $this->app['config']->get('services.postmark', []);
+                }
+
+                return $factory->create(new Dsn(
+                    'postmark+'.($config['scheme'] ?? 'api'),
+                    $config['endpoint'] ?? 'default',
+                    $config['secret']
+                ));
+            });
+
             $settings = MailSetting::instance();
             if ($settings->send_mode === self::MODE_POSTMARK) {
                 $config = App::make('config');
