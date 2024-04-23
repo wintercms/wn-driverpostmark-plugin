@@ -60,7 +60,7 @@ class Plugin extends PluginBase
             $model->bindEvent('model.beforeValidate', function () use ($model) {
                 $model->rules['postmark_secret'] = 'required_if:send_mode,' . self::MODE_POSTMARK;
             });
-            $model->postmark_secret = config('services.postmark.secret');
+            $model->postmark_secret = config('services.postmark.secret', env('POSTMARK_SECRET'));
         });
 
         Event::listen('backend.form.extendFields', function ($widget) {
