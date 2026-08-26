@@ -1,1 +1,6 @@
 '1.0.0': 'Initial release'
+'1.1.0':
+  - 'Fixed the Postmark mail transport not being registered, which prevented the driver from sending mail'
+  - 'Added support for configuring the Postmark secret through the services.postmark config and the POSTMARK_SECRET environment variable'
+  - 'Marked the plugin as elevated so that Postmark mail can be sent from restricted pages such as the system update screen'
+  - 'Improved the README'
